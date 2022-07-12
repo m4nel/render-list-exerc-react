@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import Botao from './components/Botao';
+
 import './App.css';
 
 function App() {
+
+  let list = [
+    { name: "Leticia", age: 13 },
+    { name: "Sabrina", age: 14 },
+    { name: "Sorriso", age: 20 },
+    { name: "Fernando", age: 16 }
+  ]
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ul >
+{list.map((item, index)=> (
+  <li key={index}>
+<Botao data={item}/>
+</li>))}
+      </ul>
     </div>
   );
 }
